@@ -29,7 +29,10 @@ const Categories: React.FC = () => {
   ];
 
   return (
-    <div className="mt-6 px-4 overflow-x-auto whitespace-nowrap flex gap-3">
+    <div
+      className="mt-6 overflow-x-auto whitespace-nowrap flex gap-3 px-4 md:px-0"
+      style={{ scrollbarWidth: "none" }}
+    >
       {categories.map((category, index) => (
         <button
           key={index}
