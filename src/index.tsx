@@ -1,16 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import MarketPage from "./pages/MarketPage";
+import { TokenProvider } from "./context/TokenContext";
+import loadable from "./components/Loadable/Loadable";
+const MarketPage = loadable(() => import("./pages/Market"));
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const queryClient = new QueryClient();
+
+const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <React.StrictMode>
-    <MarketPage />
-  </React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <TokenProvider>
+        <MarketPage />
+      </TokenProvider>
+    </QueryClientProvider>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

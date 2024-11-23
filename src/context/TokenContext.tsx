@@ -4,13 +4,13 @@ import { ITokenList } from "../interfaces/token.model";
 
 interface TokenContextType {
   tokens: ITokenList[];
-  topMovers: {
-    topGainers: ITokenList[];
-    topLosers: ITokenList[];
-  };
+  topMovers: ITokenList[];
   loading: boolean;
   setSortConfig: React.Dispatch<
-    React.SetStateAction<{ key: string; order: "asc" | "desc" | null }>
+    React.SetStateAction<{
+      key: keyof ITokenList;
+      order: "asc" | "desc" | null;
+    }>
   >;
   setSearchQuery: (query: string) => void;
 }
