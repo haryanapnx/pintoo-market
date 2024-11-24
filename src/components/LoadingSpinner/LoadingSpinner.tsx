@@ -13,6 +13,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
 }) => {
   return (
     <div
+      data-testid="loading-spinner"
       className={`flex items-center justify-center h-full w-full ${fixed ? " fixed inset-0  bg-white bg-opacity-50 z-10" : ""}`}
       {...props}
     >
