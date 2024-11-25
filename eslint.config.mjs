@@ -3,7 +3,7 @@ import pluginJs from "@eslint/js";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import reactPlugin from "eslint-plugin-react";
-import storybookPlugin from "eslint-plugin-storybook";
+import reactHooksPlugin from "eslint-plugin-react-hooks"
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
@@ -22,7 +22,7 @@ export default [
     plugins: {
       "@typescript-eslint": tsPlugin,
       react: reactPlugin,
-      storybook: storybookPlugin,
+      "react-hooks": reactHooksPlugin,
     },
     settings: {
       react: {
@@ -31,12 +31,13 @@ export default [
     },
     rules: {
       ...pluginJs.configs.recommended.rules,
-      ...storybookPlugin.configs.recommended.rules,
       ...tsPlugin.configs.recommended.rules,
       ...reactPlugin.configs.flat.recommended.rules,
       "react/react-in-jsx-scope": "off",
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-explicit-any": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
     },
   },
 ];

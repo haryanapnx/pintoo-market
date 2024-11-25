@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 interface TextAnimationProps {
   value: string;
@@ -7,20 +7,17 @@ interface TextAnimationProps {
 
 const TextAnimation: React.FC<TextAnimationProps> = ({ value, price }) => {
   const [previousValue, setPreviousValue] = useState<string | null>(null);
-  const [animationClass, setAnimationClass] = useState<string>("");
+  const [animationClass, setAnimationClass] = useState<string>('');
 
   useEffect(() => {
     if (previousValue !== null && price !== previousValue) {
       if (Number(price) > Number(previousValue)) {
-        setAnimationClass("text-green-500");
+        setAnimationClass('text-green-500');
       } else if (Number(price) < Number(previousValue)) {
-        setAnimationClass("text-red-500");
+        setAnimationClass('text-red-500');
       }
 
-      const timeout = setTimeout(
-        () => setAnimationClass("text-black"),
-        1000,
-      );
+      const timeout = setTimeout(() => setAnimationClass('text-black'), 1000);
       return () => clearTimeout(timeout);
     }
 

@@ -1,8 +1,8 @@
-import React from "react";
-import loadable from "../Loadable/Loadable";
+import React from 'react';
+import loadable from '../Loadable/Loadable';
 
-const Footer = loadable(() => import("../Footer/Footer"));
-const Navbar = loadable(() => import("../Navbar/Navbar"));
+const Footer = loadable(() => import('../Footer/Footer'));
+const Navbar = loadable(() => import('../Navbar/Navbar'));
 
 interface LayoutProps {
   children: React.ReactNode;

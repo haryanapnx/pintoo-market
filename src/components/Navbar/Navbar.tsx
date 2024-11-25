@@ -1,7 +1,7 @@
-import React from "react";
-import { FaGlobe } from "react-icons/fa";
-import { AiOutlineMenu } from "react-icons/ai";
-import logo from "../../assets/logo.svg";
+import React from 'react';
+import { FaGlobe } from 'react-icons/fa';
+import { AiOutlineMenu } from 'react-icons/ai';
+import logo from '../../assets/logo.svg';
 
 const Navbar: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
         <div className="flex items-center space-x-10 hidden md:flex">
           <nav className="flex items-center space-x-10">
-            {["Fitur", "Trading", "Edukasi", "Lainnya"].map((item) => (
+            {['Fitur', 'Trading', 'Edukasi', 'Lainnya'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}

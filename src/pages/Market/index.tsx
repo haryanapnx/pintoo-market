@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import { columns } from "./column";
-import { useTokenContext } from "../../context/TokenContext";
-import useFilterWithQueryParamToken from "../../hooks/useFilterWithQueryParamToken";
-import { ITokenList } from "../../interfaces/token.model";
+import React, { useEffect } from 'react';
+import { columns } from './column';
+import { useTokenContext } from '../../context/TokenContext';
+import useFilterWithQueryParamToken from '../../hooks/useFilterWithQueryParamToken';
+import { ITokenList } from '../../interfaces/token.model';
 import {
   BackToTop,
   Categories,
   Header,
   Table,
   TopMovers,
-} from "../../components";
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-import Layout from "../../components/Layout/Layout";
+} from '../../components';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import Layout from '../../components/Layout/Layout';
 
 const MarketPage: React.FC = () => {
   const { tokens, loading, setSortConfig, topMovers, setSearchQuery } =

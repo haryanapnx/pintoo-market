@@ -1,6 +1,6 @@
-import React from "react";
-import TableRow from "./TableRow";
-import { TableBodyProps } from "../../interfaces/table.model";
+import React from 'react';
+import TableRow from './TableRow';
+import { TableBodyProps } from '../../interfaces/table.model';
 
 const TableBody = <T extends Record<string, any>>({
   columns,

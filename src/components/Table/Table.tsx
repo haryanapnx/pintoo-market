@@ -1,7 +1,7 @@
-import React from "react";
-import TableHeader from "./TableHeader";
-import TableBody from "./TableBody";
-import { TableProps } from "../../interfaces/table.model";
+import React from 'react';
+import TableHeader from './TableHeader';
+import TableBody from './TableBody';
+import { TableProps } from '../../interfaces/table.model';
 
 const Table = <T extends Record<string, any>>({
   columns,

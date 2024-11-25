@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface CoinLogoProps {
   logoSrc: string;
@@ -16,18 +16,18 @@ const CoinLogo: React.FC<CoinLogoProps> = ({
     style={{
       maskImage: `url(${logoSrc})`,
       WebkitMaskImage: `url(${logoSrc})`,
-      maskPosition: "50% 50%",
-      WebkitMaskPosition: "50% 50%",
-      maskRepeat: "no-repeat",
-      WebkitMaskRepeat: "no-repeat",
-      maskSize: "cover",
-      WebkitMaskSize: "cover",
+      maskPosition: '50% 50%',
+      WebkitMaskPosition: '50% 50%',
+      maskRepeat: 'no-repeat',
+      WebkitMaskRepeat: 'no-repeat',
+      maskSize: 'cover',
+      WebkitMaskSize: 'cover',
       backgroundImage: `url(${logoSrc})`,
       backgroundColor,
-      backgroundSize: "cover",
+      backgroundSize: 'cover',
       width: size,
       height: size,
-      backgroundBlendMode: "screen",
+      backgroundBlendMode: 'screen',
     }}
   />
 );

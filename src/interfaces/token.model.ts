@@ -1,4 +1,4 @@
-import { ICurencyTokenData } from "./currency.model";
-import { IPriceData } from "./price.model";
+import { ICurencyTokenData } from './currency.model';
+import { IPriceData } from './price.model';
 
-export interface ITokenList extends ICurencyTokenData, Partial<IPriceData> { }
+export interface ITokenList extends ICurencyTokenData, Partial<IPriceData> {}

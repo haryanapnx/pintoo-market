@@ -1,6 +1,6 @@
-import React, { createContext, useContext } from "react";
-import { useTokens } from "../hooks/useTokens";
-import { ITokenList } from "../interfaces/token.model";
+import React, { createContext, useContext } from 'react';
+import { useTokens } from '../hooks/useTokens';
+import { ITokenList } from '../interfaces/token.model';
 
 interface TokenContextType {
   tokens: ITokenList[];
@@ -9,7 +9,7 @@ interface TokenContextType {
   setSortConfig: React.Dispatch<
     React.SetStateAction<{
       key: keyof ITokenList;
-      order: "asc" | "desc" | null;
+      order: 'asc' | 'desc' | null;
     }>
   >;
   setSearchQuery: (query: string) => void;
@@ -37,6 +37,6 @@ export const TokenProvider: React.FC<TokenProviderProps> = ({ children }) => {
 export const useTokenContext = () => {
   const context = useContext(TokenContext);
   if (!context)
-    throw new Error("useTokenContext must be used within a TokenProvider");
+    throw new Error('useTokenContext must be used within a TokenProvider');
   return context;
 };

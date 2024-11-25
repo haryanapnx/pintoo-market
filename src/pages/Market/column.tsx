@@ -1,22 +1,22 @@
-import { CoinLogo } from "../../components";
-import { ITokenList } from "../../interfaces/token.model";
-import { convertToRp } from "../../utils";
-import TextAnimation from "../../components/TextAnimation/TextAnimation";
-import PercentageChange from "../../components/PercentageChange/PercentageChange";
+import { CoinLogo } from '../../components';
+import { ITokenList } from '../../interfaces/token.model';
+import { convertToRp } from '../../utils';
+import TextAnimation from '../../components/TextAnimation/TextAnimation';
+import PercentageChange from '../../components/PercentageChange/PercentageChange';
 
 const percentageColumn = [
-  { label: "24 Jam", key: "day" },
-  { label: "1 mgg", key: "week" },
-  { label: "1 bln", key: "month" },
-  { label: "1 thn", key: "year" },
+  { label: '24 Jam', key: 'day' },
+  { label: '1 mgg', key: 'week' },
+  { label: '1 bln', key: 'month' },
+  { label: '1 thn', key: 'year' },
 ];
 
 export const columns = [
   {
-    title: "crypto",
-    dataIndex: "name",
+    title: 'crypto',
+    dataIndex: 'name',
     sortable: true,
-    key: "name",
+    key: 'name',
     render: (_: any, record: ITokenList) => (
       <div className="flex items-center space-x-2">
         <CoinLogo logoSrc={record.logo} backgroundColor={record.color} />
@@ -28,14 +28,14 @@ export const columns = [
     ),
   },
   {
-    title: "harga",
-    dataIndex: "latestPrice",
-    key: "latestPrice",
+    title: 'harga',
+    dataIndex: 'latestPrice',
+    key: 'latestPrice',
     sortable: true,
     render: (_: any, record: ITokenList) => (
       <TextAnimation
-        price={record.latestPrice || "0"}
-        value={convertToRp(record.latestPrice || "0", record.decimal_point)}
+        price={record.latestPrice || '0'}
+        value={convertToRp(record.latestPrice || '0', record.decimal_point)}
       />
     ),
   },
@@ -50,12 +50,12 @@ export const columns = [
           value={String(record[item.key as keyof ITokenList])}
         />
       ) : (
-        "-"
+        '-'
       ),
   })),
   {
-    title: "",
-    key: "",
+    title: '',
+    key: '',
     render: () => (
       <button className="px-5 py-2 text-white bg-blue-600 rounded-2xl hover:bg-blue-600">
         Beli

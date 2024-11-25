@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from "react";
-import Spinner from "../LoadingSpinner/LoadingSpinner";
+import React, { lazy, Suspense } from 'react';
+import Spinner from '../LoadingSpinner/LoadingSpinner';
 
 interface LoadableOptions {
   fallback?: React.ReactNode;
@@ -7,7 +7,7 @@ interface LoadableOptions {
 
 const loadable = (
   importFunc: () => Promise<{ default: React.ComponentType<any> }>,
-  options: LoadableOptions = {},
+  options: LoadableOptions = {}
 ) => {
   const LazyComponent = lazy(importFunc);
 
@@ -17,7 +17,7 @@ const loadable = (
     </Suspense>
   );
 
-  Component.displayName = `LoadableComponent(${importFunc.name || "Unknown"})`;
+  Component.displayName = `LoadableComponent(${importFunc.name || 'Unknown'})`;
   return Component;
 };
 

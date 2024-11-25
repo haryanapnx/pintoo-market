@@ -1,5 +1,5 @@
-import React from "react";
-import logo from "../../assets/logo.svg";
+import React from 'react';
+import logo from '../../assets/logo.svg';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex space-x-8">
-            {["About", "Contact", "Privacy Policy", "Terms of Service"].map(
+            {['About', 'Contact', 'Privacy Policy', 'Terms of Service'].map(
               (link) => (
                 <span
                   data-testid="menu-link"
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                 >
                   {link}
                 </span>
-              ),
+              )
             )}
           </div>
         </div>

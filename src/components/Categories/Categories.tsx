@@ -1,37 +1,37 @@
-import React from "react";
+import React from 'react';
 import {
   FaStar,
   FaUniversity,
   FaGamepad,
   FaChartLine,
   FaExchangeAlt,
-} from "react-icons/fa";
-import { RiBankFill } from "react-icons/ri";
-import { MdOutlineLayers } from "react-icons/md";
-import { BsCurrencyExchange, BsRobot, BsLayersHalf } from "react-icons/bs";
+} from 'react-icons/fa';
+import { RiBankFill } from 'react-icons/ri';
+import { MdOutlineLayers } from 'react-icons/md';
+import { BsCurrencyExchange, BsRobot, BsLayersHalf } from 'react-icons/bs';
 
 const Categories: React.FC = () => {
   const categories = [
-    { label: "Terbaru", icon: <FaStar className="text-blue-600" /> },
-    { label: "DeFi", icon: <FaUniversity className="text-blue-600" /> },
-    { label: "NFT/Gaming", icon: <FaGamepad className="text-blue-600" /> },
-    { label: "CEX", icon: <FaChartLine className="text-blue-600" /> },
-    { label: "DEX", icon: <FaExchangeAlt className="text-blue-600" /> },
-    { label: "Layer-1", icon: <BsLayersHalf className="text-blue-600" /> },
-    { label: "DePIN", icon: <RiBankFill className="text-blue-600" /> },
-    { label: "Lending", icon: <FaUniversity className="text-blue-600" /> },
-    { label: "Layer-2", icon: <MdOutlineLayers className="text-blue-600" /> },
+    { label: 'Terbaru', icon: <FaStar className="text-blue-600" /> },
+    { label: 'DeFi', icon: <FaUniversity className="text-blue-600" /> },
+    { label: 'NFT/Gaming', icon: <FaGamepad className="text-blue-600" /> },
+    { label: 'CEX', icon: <FaChartLine className="text-blue-600" /> },
+    { label: 'DEX', icon: <FaExchangeAlt className="text-blue-600" /> },
+    { label: 'Layer-1', icon: <BsLayersHalf className="text-blue-600" /> },
+    { label: 'DePIN', icon: <RiBankFill className="text-blue-600" /> },
+    { label: 'Lending', icon: <FaUniversity className="text-blue-600" /> },
+    { label: 'Layer-2', icon: <MdOutlineLayers className="text-blue-600" /> },
     {
-      label: "Ekosistem Stablecoin",
+      label: 'Ekosistem Stablecoin',
       icon: <BsCurrencyExchange className="text-blue-600" />,
     },
-    { label: "Artificial", icon: <BsRobot className="text-blue-600" /> },
+    { label: 'Artificial', icon: <BsRobot className="text-blue-600" /> },
   ];
 
   return (
     <div
       className="mt-6 overflow-x-auto whitespace-nowrap flex gap-3 px-4 md:px-0"
-      style={{ scrollbarWidth: "none" }}
+      style={{ scrollbarWidth: 'none' }}
       data-testid="categories"
     >
       {categories.map((category, index) => (

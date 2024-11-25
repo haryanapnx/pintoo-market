@@ -1,9 +1,9 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from 'react';
 
 const useFilterWithQueryParamToken = () => {
   const [sortKey, setSortKey] = useState<string | null>(null);
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
-  const [search, setSearch] = useState<string>("");
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | null>(null);
+  const [search, setSearch] = useState<string>('');
 
   const setQueryParam = useCallback((key: string, val: string | null) => {
     const params = new URLSearchParams(window.location.search);
@@ -11,54 +11,58 @@ const useFilterWithQueryParamToken = () => {
       params.set(key, val);
     } else {
       console.log(key);
-      
+
       params.delete(key);
     }
-    window.history.pushState({}, "", `${window.location.pathname}?${params.toString()}`);
+    window.history.pushState(
+      {},
+      '',
+      `${window.location.pathname}?${params.toString()}`
+    );
   }, []);
 
   const handleSort = useCallback(
     (key: string) => {
-      let newSortOrder: "asc" | "desc" | null = null;
+      let newSortOrder: 'asc' | 'desc' | null = null;
 
       if (sortKey !== key) {
-        newSortOrder = "asc";
-      } else if (sortOrder === "asc") {
-        newSortOrder = "desc";
-      } else if (sortOrder === "desc") {
+        newSortOrder = 'asc';
+      } else if (sortOrder === 'asc') {
+        newSortOrder = 'desc';
+      } else if (sortOrder === 'desc') {
         newSortOrder = null;
       } else {
-        newSortOrder = "asc";
+        newSortOrder = 'asc';
       }
 
       setSortKey(newSortOrder ? key : null);
       setSortOrder(newSortOrder);
 
       const keyConfig = newSortOrder ? key : null;
-      setQueryParam("filter", keyConfig);
-      setQueryParam("sort", newSortOrder);
+      setQueryParam('filter', keyConfig);
+      setQueryParam('sort', newSortOrder);
     },
-    [sortKey, sortOrder, setQueryParam],
+    [sortKey, sortOrder, setQueryParam]
   );
 
   const handleSearch = useCallback(
     (value: string) => {
       setSearch(value);
-      setQueryParam("search", value);
+      setQueryParam('search', value);
     },
-    [setQueryParam],
+    [setQueryParam]
   );
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const filter = params.get("filter");
+    const filter = params.get('filter');
     if (filter) {
       setSortKey(filter);
-      setSortOrder((params.get("sort") as "asc" | "desc") || null);
+      setSortOrder((params.get('sort') as 'asc' | 'desc') || null);
     }
 
-    if (params.has("search")) {
-      setSearch(params.get("search") || "");
+    if (params.has('search')) {
+      setSearch(params.get('search') || '');
     }
   }, []);
 

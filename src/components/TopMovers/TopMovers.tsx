@@ -1,8 +1,8 @@
-import React from "react";
-import { TiArrowSortedUp } from "react-icons/ti";
-import { ITokenList } from "../../interfaces/token.model";
-import { convertToRp } from "../../utils";
-import CoinLogo from "../CoinLogo/CoinLogo";
+import React from 'react';
+import { TiArrowSortedUp } from 'react-icons/ti';
+import { ITokenList } from '../../interfaces/token.model';
+import { convertToRp } from '../../utils';
+import CoinLogo from '../CoinLogo/CoinLogo';
 
 interface TopMoversProps {
   data: ITokenList[];
@@ -13,7 +13,7 @@ const TopMovers: React.FC<TopMoversProps> = ({ data }) => (
     <h2 className="text-xl font-bold mb-3">🔥 Top Movers (24 Jam)</h2>
     <div
       className="flex space-x-4 overflow-x-auto"
-      style={{ scrollbarWidth: "none" }}
+      style={{ scrollbarWidth: 'none' }}
     >
       {data.length > 0 &&
         data.map((mover, index) => (
