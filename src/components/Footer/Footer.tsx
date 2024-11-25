@@ -3,7 +3,7 @@ import logo from "../../assets/logo.svg";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 py-8">
+    <footer className="bg-gray-100 py-8" data-testid="footer">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
           <div className="flex flex-col items-center lg:items-start">
@@ -20,6 +20,7 @@ const Footer: React.FC = () => {
             {["About", "Contact", "Privacy Policy", "Terms of Service"].map(
               (link) => (
                 <span
+                  data-testid="menu-link"
                   key={link}
                   className="cursor-pointer text-sm text-gray-600 hover:text-gray-900"
                 >

@@ -12,6 +12,7 @@ const CoinLogo: React.FC<CoinLogoProps> = ({
   size = 32,
 }) => (
   <div
+    data-testid="coin-logo"
     style={{
       maskImage: `url(${logoSrc})`,
       WebkitMaskImage: `url(${logoSrc})`,
