@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { ENV } from '../config/env';
 import toast from 'react-hot-toast';
 
-const baseURL = ENV.API_URL || '/api';
+let baseURL = '';
+if (process.env.NODE_ENV === 'production') {
+  baseURL = '/api';
+}
 
 export const apiClient = axios.create({ baseURL });
 apiClient.interceptors.response.use(
