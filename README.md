@@ -5,8 +5,9 @@ The application provides a seamless experience across desktop and mobile devices
 ## Getting Started
 You can view the live demo of the application here:
 [Crypto Market Demo](https://pintoo-market.vercel.app/)
-> **Important**:
-    to access the demo link, you may need to bypass CORS restrictions for the API. Install the [Chrome extension Allow CORS](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) from the Chrome Web Store and enable it.
+
+*Important*:
+> If the demo link encounters CORS issues when accessed, you may need to bypass CORS restrictions for the API. Install the [Chrome extension Allow CORS](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) from the Chrome Web Store and enable it.
 
 ### Installation
 
