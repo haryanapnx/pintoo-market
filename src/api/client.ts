@@ -2,11 +2,7 @@ import axios from 'axios';
 import { ENV } from '../config/env';
 import toast from 'react-hot-toast';
 
-let baseURL = '';
-// const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-if (process.env.NODE_ENV === 'production') {
-  baseURL = ENV.API_URL;
-}
+const baseURL = ENV.API_URL || '/api';
 
 export const apiClient = axios.create({ baseURL });
 apiClient.interceptors.response.use(

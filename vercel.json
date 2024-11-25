@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api/:path*",
+            "destination": "https://api.pintu.co.id/v2/:path*"
+        }
+    ]
+}
