@@ -10,6 +10,7 @@ const PercentageChange: React.FC<PercentageChangeProps> = ({ value }) => {
 
   return (
     <span
+      data-testid="percentage-change"
       className={`flex items-center justify-end md:justify-start gap-1 font-semibold ${
         isPositive ? "text-green-600" : "text-red-500"
       }`}

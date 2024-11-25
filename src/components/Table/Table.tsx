@@ -10,10 +10,10 @@ const Table = <T extends Record<string, any>>({
   sortOrder,
   onSort,
 }: TableProps<T>) => {
-
   return (
     <div className="overflow-x-auto w-full mt-4">
       <table
+        data-testid="table"
         cellSpacing="0"
         cellPadding="0"
         className="table-auto border-separate w-full border rounded-lg overflow-hidden"

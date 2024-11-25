@@ -28,6 +28,7 @@ const BackToTopButton: React.FC = () => {
 
   return (
     <button
+      data-testid="back-to-top-button"
       onClick={scrollToTop}
       className={`fixed bottom-7 right-7 bg-blue-300 hover:bg-blue-400 text-white p-3 rounded-full shadow-lg transition-all duration-300 ${
         isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
