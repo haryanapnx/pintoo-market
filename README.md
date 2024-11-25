@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# Introduction
+This project is a crypto market that allows users to browse cryptocurrency prices, apply filters, and sort data effectively. 
+The application provides a seamless experience across desktop and mobile devices, offering performance optimizations and user-friendly UI/UX.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Getting Started
+You can view the live demo of the application here:
+[Crypto Market Demo](https://pintoo-market.vercel.app/)
+> **Important**:
+    to access the demo link, you may need to bypass CORS restrictions for the API. Install the [Chrome extension Allow CORS](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) from the Chrome Web Store and enable it.
 
-## Available Scripts
+### Installation
 
-In the project directory, you can run:
+1.	Clone the repository:
 
-### `npm start`
+```bash
+git clone https://github.com/haryanapnx/pintoo-market.git
+cd pintoo-market
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2.	Install dependencies:
+```bash 
+npm install 
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+3.	Run the development server:
+```bash 
+npm start 
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+4.	Build the application:
+```bash 
+npm run build 
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5.	Run test:
+```bash 
+npm test 
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies and Packages
+The following technologies and libraries were used in the project:
+- **React + Typescript**
+- **React Query**
+- **Tailwind CSS**
+- **Axios**
+- **React Icons**
+- **react-hot-toast**
 
-### `npm run eject`
+## Improvements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Several enhancements were implemented to improve functionality, responsiveness, and usability:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.	Floating Filter for Mobile View:
+    - A filter dropdown is added for mobile users.
+    - The filter remains fixed at the bottom of the screen when scrolling.
+    - Provides a better UX for users filtering data on smaller screens.
+2.	Back-to-Top Button:
+    - A floating button that appears when users scroll down.
+    - Allows users to quickly navigate back to the top of the page.
+    - Includes smooth scrolling and responsive visibility logic.
+3.	Sort by Name:
+    - Implemented dynamic sorting by name, with ascending/descending order.
+    - Query parameters are updated in the URL to persist sorting across sessions.
+4.	Custom Loadable Component:
+    - A custom loadable utility was created for lazy loading components.
+    - It uses React's Suspense and lazy to split code and reduce initial load time.
+    - A spinner is used as a fallback for a better user experience.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Decisions and Tradeoffs
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**React Query vs Redux**
+- Decision: Chose React Query for server-state management due to its optimized caching and refetching strategies.
+- Tradeoff: React Query is primarily focused on server-side data, so additional work is needed for managing client-side state (handled via Context API).
 
-## Learn More
+**Floating Filter for Mobile**
+- Decision: Implemented a floating dropdown for mobile filtering instead of traditional inline filters.
+- Tradeoff: Added complexity in terms of managing floating positions and scroll behaviors but significantly improved mobile UX.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Custom Loadable Component**
+- Decision: Built a custom loadable function instead of using libraries like react-loadable.
+- Tradeoff: Provides full control over lazy loading behavior and fallback rendering but requires manual maintenance.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Tailwind CSS**
+- Decision: Used Tailwind CSS for styling due to its utility-first approach.
+- Tradeoff: Requires familiarity with utility classes, but it drastically improves development speed and maintains a consistent design system.
+
+**Using Context API for State Management**
+- Decision: Opted for Context API instead of Redux for simplicity.
+- Tradeoff: Limited to small to medium-scale applications. For larger applications, Redux or other state management libraries might be more suitable.
+
